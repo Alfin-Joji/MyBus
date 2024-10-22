@@ -84,18 +84,17 @@ document.getElementById('in-'+id).style.display="block";
         <div class="set">
         <li><a class="atag" style="text-decoration:none"  onclick="newclick(id)" id="2">Routes</a></li>
         </div>
-        
         <div class="set">
-        <li><a class="atag" style="text-decoration:none"  onclick="newclick(id)" id="3">Bookings</a></li>
+        <li><a class="atag" style="text-decoration:none" onclick="newclick(id)" id="3" >Buses</a></li>
         </div>
         <div class="set">
-        <li><a class="atag" style="text-decoration:none" onclick="newclick(id)" id="4" >Buses</a></li>
+        <li><a class="atag" style="text-decoration:none" onclick="newclick(id)" id="4" >Add New Admin</a></li>
         </div>
         <div class="set">
-        <li><a class="atag" style="text-decoration:none" onclick="newclick(id)" id="5" >Add New Admin</a></li>
+        <li><a class="atag" style="text-decoration:none" onclick="newclick(id)" id="5" >Employee details</a></li>
         </div>
         <div class="set">
-        <li><a class="atag" style="text-decoration:none" onclick="newclick(id)" id="6" >Employee details</a></li>
+        <li><a class="atag" style="text-decoration:none" onclick="newclick(id)" id="6" >Bus Schedule</a></li>
         </div>
       </ul>
     </div>
@@ -111,12 +110,7 @@ document.getElementById('in-'+id).style.display="block";
   include("routing.php");
     ?>
 
-
-<?php 
-  include("booking.php");
-    ?>
-
-<?php 
+  <?php 
   include("buses.php");
     ?>
 
@@ -126,6 +120,10 @@ document.getElementById('in-'+id).style.display="block";
 
     <?php
   include("empdetails.php");
+    ?>
+
+<?php
+  include("BusSchedule.php");
     ?>
 
   </div>

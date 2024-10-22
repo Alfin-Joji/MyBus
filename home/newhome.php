@@ -1,17 +1,36 @@
+<?php
+session_start(); // Start the session
+if (isset($_SESSION['email']) && isset($_SESSION['name'])) {
+    $email = $_SESSION['email'];
+    $name = $_SESSION['name'];
+}
+    else {
+    // Redirect to login page if the session does not exist
+    header("Location: home.html");
+    exit();
+}
+?>
 <html>
 <head>
     <title>MyBus</title>
     <link rel="stylesheet" href="newhome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="banner"> 
         <div class="navbar">
             <img src="./img/logo.png" class="logo"> 
+            <p style="color: white; margin: 0; padding: 0; font-family: 'Londrina Sketch', cursive;"> 
+            Hello  
+            <?php 
+            echo '         ' . $name . '  !!!';
+            ?>
+            </p>
             <ul>
                 <li><a href="#">HOME</a></li>
                 <li><a href="../index/index.php">MAKE BOOKING</a></li>
-                <li><a href="">CHECK TICKETS</a></li>
-                <li><a id="user-email" style="display: none;"></a></li>
+                <li><a href="../ticket/checkticket.php">CHECK TICKETS</a></li>
+                <li><button onclick="logoutUser()">LOGOUT</button></li>
             </ul>
         </div>
         <div class="content">
@@ -26,6 +45,11 @@
     <script>
         function redirectToIndex() {
          window.location.href = "../index/index.php";
+        }
+
+        // Redirect to logout.php to clear session and session storage
+        function logoutUser() {
+            window.location.href = "../user/logout.php";
         }
         function isLoggedIn() {
             var isLoggedIn = sessionStorage.getItem('isLoggedIn');
